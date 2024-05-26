@@ -20,9 +20,9 @@ public class MQTTHelper {
 
     public final String[] arrayTopics = {"bcthanh/feeds/cambien1", "bcthanh/feeds/cambien2", "bcthanh/feeds/cambien3", "bcthanh/feeds/nutnhan1", "bcthanh/feeds/nutnhan2"};
 
-    final String clientId = "11";
+    final String clientId = "123";
     final String username = "bcthanh";
-    final String password = "aio_BVHv12Cd3LacqrqBixRxiaJ1T3qr";
+    final String password = "aio_ZPxZ46rPWHFNxjJvZqBlt0Ov2Ogt";
 
     final String serverUri = "tcp://io.adafruit.com:1883";
 
