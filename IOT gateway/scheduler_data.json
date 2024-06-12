@@ -1,0 +1,35 @@
+[
+    {
+        "cycle": 4,
+        "flow1": 10,
+        "flow2": 5,
+        "flow3" 10,
+        "area": -1,
+        "isActive": 1,
+        "sched_name": "scheduler1"
+        "start_time": "17:00"
+        "end_time": "17:10"
+    },
+    {
+        "cycle": 2,
+        "flow1": 7,
+        "flow2": 10,
+        "flow3" 5,
+        "area": 2,
+        "isActive": 0,
+        "sched_name": "scheduler2"
+        "start_time": "6:00"
+        "end_time": "6:10"
+    },
+    {
+        "cycle": 5,
+        "flow1": 15,
+        "flow2": 10,
+        "flow3" 30,
+        "area": 2,
+        "isActive": 0,
+        "sched_name": "scheduler3"
+        "start_time": "3:00"
+        "end_time": "3:20"
+    },
+]
