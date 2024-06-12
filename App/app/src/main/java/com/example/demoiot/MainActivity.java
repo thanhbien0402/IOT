@@ -27,23 +27,23 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        txtTemp = findViewById(R.id.txtTemperature);
-        txtHumid = findViewById(R.id.txtHumidity);
-        txtLight = findViewById(R.id.txtLight);
-        btn1 = findViewById(R.id.btn1);
-        btn2 = findViewById(R.id.btn2);
+//        txtTemp = findViewById(R.id.txtTemperature);
+//        txtHumid = findViewById(R.id.txtHumidity);
+//        txtLight = findViewById(R.id.txtLight);
+//        btn1 = findViewById(R.id.btn1);
+//        btn2 = findViewById(R.id.btn2);
 
-        btn1.setOnToggledListener(new OnToggledListener() {
-            @Override
-            public void onSwitched(ToggleableView toggleableView, boolean isOn) {
-                if (isOn == true){
-                    sendDataMQTT("bcthanh/feeds/nutnhan1", "1");
-                }
-                else {
-                    sendDataMQTT("bcthanh/feeds/nutnhan1", "0");
-                }
-            }
-        });
+//        btn1.setOnToggledListener(new OnToggledListener() {
+//            @Override
+//            public void onSwitched(ToggleableView toggleableView, boolean isOn) {
+//                if (isOn == true){
+//                    sendDataMQTT("bcthanh/feeds/nutnhan1", "1");
+//                }
+//                else {
+//                    sendDataMQTT("bcthanh/feeds/nutnhan1", "0");
+//                }
+//            }
+//        });
         btn2.setOnToggledListener(new OnToggledListener() {
             @Override
             public void onSwitched(ToggleableView toggleableView, boolean isOn) {
