@@ -41,7 +41,7 @@ public class LampActivity extends AppCompatActivity {
         home.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(TemperatureActivity.this, MainActivity.class);
+                Intent intent = new Intent(LampActivity.this, MainActivity.class);
                 startActivity(intent);
                 finish();
             }
@@ -49,7 +49,7 @@ public class LampActivity extends AppCompatActivity {
         temperature.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(PumpActivity.this, TemperatureActivity.class);
+                Intent intent = new Intent(LampActivity.this, TemperatureActivity.class);
                 startActivity(intent);
                 finish();
             }
@@ -57,7 +57,7 @@ public class LampActivity extends AppCompatActivity {
         pump.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(PumpActivity.this, PumpActivity.class);
+                Intent intent = new Intent(LampActivity.this, PumpActivity.class);
                 startActivity(intent);
                 finish();
             }
@@ -65,7 +65,7 @@ public class LampActivity extends AppCompatActivity {
         lamp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(PumpActivity.this, LampActivity.class);
+                Intent intent = new Intent(LampActivity.this, LampActivity.class);
                 startActivity(intent);
                 finish();
             }

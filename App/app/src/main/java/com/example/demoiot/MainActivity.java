@@ -35,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
         temperature = findViewById(R.id.temperature_button);
         lamp = findViewById(R.id.lamp_button);
         pump = findViewById(R.id.pump_button);
-        home = findViewById(R.id.home_button)
+        home = findViewById(R.id.home_button);
         home.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
