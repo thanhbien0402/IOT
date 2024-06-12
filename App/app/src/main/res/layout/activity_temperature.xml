@@ -47,7 +47,7 @@
             android:textSize="30dp"
             android:gravity="center"
             android:textColor="#081F9E">
-            
+
         </TextView>
 
     </LinearLayout>
