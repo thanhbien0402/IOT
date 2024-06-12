@@ -37,7 +37,23 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="40"
+        android:layout_weight="10">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="9"
+            android:text="Home"
+            android:textSize="30dp"
+            android:gravity="center"
+            android:textStyle="bold"
+            android:textColor="#081F9E">
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="25"
         android:orientation="horizontal">
 
         <ImageButton
@@ -45,7 +61,7 @@
             android:layout_width="140dp"
             android:layout_height="140dp"
             android:layout_marginLeft="30dp"
-            android:layout_marginTop="200dp"
+            android:layout_marginTop="70dp"
             android:background="@drawable/scheduler_icon" />
 
         <ImageButton
@@ -53,7 +69,7 @@
             android:layout_width="140dp"
             android:layout_height="140dp"
             android:layout_marginLeft="70dp"
-            android:layout_marginTop="200dp"
+            android:layout_marginTop="70dp"
             android:background="@drawable/temperature_icon" />
     </LinearLayout>
 
@@ -160,17 +176,44 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="10">
+        android:layout_weight="5">
 
 
         <ImageButton
+            android:id="@+id/scheduler_button"
+            android:layout_marginLeft="20dp"
+            android:layout_width="60dp"
+            android:layout_height="match_parent"
+            android:background="@drawable/scheduler_icon" />
+
+        <ImageButton
+            android:id="@+id/temperature_button"
+            android:layout_marginLeft="10dp"
+            android:layout_width="60dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/temperature_icon" />
+
+        <ImageButton
             android:id="@+id/home_button"
-            android:layout_marginLeft="160dp"
-            android:layout_width="90dp"
+            android:layout_marginLeft="20dp"
+            android:layout_width="60dp"
             android:layout_height="match_parent"
             android:background="@drawable/home_icon" />
 
+        <ImageButton
+            android:id="@+id/lamp_button"
+            android:layout_marginLeft="20dp"
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:background="@drawable/lamp_icon" />
 
+        <ImageButton
+            android:id="@+id/pump_button"
+            android:layout_marginLeft="20dp"
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:background="@drawable/pump_icon" />
 
 
     </LinearLayout>

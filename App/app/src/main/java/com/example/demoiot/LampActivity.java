@@ -17,28 +17,27 @@ import org.eclipse.paho.client.mqttv3.MqttMessage;
 
 import com.github.angads25.toggle.interfaces.OnToggledListener;
 import com.github.angads25.toggle.model.ToggleableView;
+import com.github.angads25.toggle.widget.LabeledSwitch;
 
 import java.nio.charset.Charset;
 
-public class TemperatureActivity extends AppCompatActivity {
+public class LampActivity extends AppCompatActivity {
     MQTTHelper mqttHelper;
-    TextView txtTemp, txtHumid;
+    TextView txtNotification;
 
-    ImageButton home,temperature,lamp,pump,scheduler;
+    LabeledSwitch btn2;
+    ImageButton home,lamp,temperature,pump,scheduler;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_temperature);
+        setContentView(R.layout.activity_pump);
 
-        txtTemp = findViewById(R.id.txtTemperature);
-        txtHumid = findViewById(R.id.txtHumidity);
-//        txtLight = findViewById(R.id.txtLight);
+        txtNotification = findViewById(R.id.txtNotification);
         home = findViewById(R.id.home_button);
         temperature = findViewById(R.id.temperature_button);
         lamp = findViewById(R.id.lamp_button);
         pump = findViewById(R.id.pump_button);
         scheduler = findViewById(R.id.scheduler_button);
-
         home.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -50,7 +49,7 @@ public class TemperatureActivity extends AppCompatActivity {
         temperature.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(TemperatureActivity.this, TemperatureActivity.class);
+                Intent intent = new Intent(PumpActivity.this, TemperatureActivity.class);
                 startActivity(intent);
                 finish();
             }
@@ -58,7 +57,7 @@ public class TemperatureActivity extends AppCompatActivity {
         pump.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(TemperatureActivity.this, PumpActivity.class);
+                Intent intent = new Intent(PumpActivity.this, PumpActivity.class);
                 startActivity(intent);
                 finish();
             }
@@ -66,19 +65,22 @@ public class TemperatureActivity extends AppCompatActivity {
         lamp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(TemperatureActivity.this, LampActivity.class);
+                Intent intent = new Intent(PumpActivity.this, LampActivity.class);
                 startActivity(intent);
                 finish();
             }
         });
-//        scheduler.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Intent intent = new Intent(TemperatureActivity.this, SchedulerActivity.class);
-//                startActivity(intent);
-//                finish();
-//            }
-//        });
+        btn2.setOnToggledListener(new OnToggledListener() {
+            @Override
+            public void onSwitched(ToggleableView toggleableView, boolean isOn) {
+                if (isOn == true){
+                    sendDataMQTT("bcthanh/feeds/nutnhan2", "1");
+                }
+                else {
+                    sendDataMQTT("bcthanh/feeds/nutnhan2", "0");
+                }
+            }
+        });
         startMQTT();
     }
     public void sendDataMQTT(String topic, String value){
@@ -110,16 +112,12 @@ public class TemperatureActivity extends AppCompatActivity {
 
             @Override
             public void messageArrived(String topic, MqttMessage message) throws Exception {
-                Log.d("TEST", topic + "***" + message.toString());
-                if (topic.contains("cambien1")){
-                    txtTemp.setText(message.toString() + "℃");
+                if (topic.contains("nutnhan2")){
+                    if (message.toString().equals("1")){
+                        btn2.setOn(true);
+                    }
+                    else btn2.setOn(false);
                 }
-                else if (topic.contains("cambien2")){
-                    txtHumid.setText(message.toString() + "%");
-                }
-//                else if (topic.contains("cambien3")){
-//                    txtLight.setText(message.toString() + " lux");
-//                }
             }
             @Override
             public void deliveryComplete(IMqttDeliveryToken token) {

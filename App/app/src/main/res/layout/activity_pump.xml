@@ -6,117 +6,101 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@drawable/screen"
-    tools:context=".TemperatureActivity">
+    tools:context=".PumpActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="10"
         android:orientation="horizontal">
+
         <ImageView
             android:layout_width="0dp"
             android:layout_height="match_parent"
+            android:layout_margin="10dp"
             android:layout_weight="1"
-            android:src="@drawable/logo"
-            android:layout_margin="10dp">
+            android:src="@drawable/logo">
 
         </ImageView>
+
         <TextView
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="9"
+            android:gravity="center"
             android:text="IOT ASSIGNMENT"
-            android:textSize="36dp"
-            android:gravity="center"
-            android:textColor="#081F9E">
+            android:textColor="#081F9E"
+            android:textSize="36dp">
 
         </TextView>
 
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="10">
-
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="9"
-            android:text="Temperature and Humidity"
-            android:textSize="30dp"
-            android:gravity="center"
-            android:textColor="#081F9E">
-
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="20"
-        android:orientation="horizontal">
-
-        <ImageView
-            android:layout_width="0dp"
-            android:layout_height="200dp"
-            android:layout_marginTop="50dp"
-            android:layout_weight="1"
-            android:src="@drawable/temperature"/>
-
-        <TextView
-            android:id="@+id/txtTemperature"
-            android:layout_width="0dp"
-            android:layout_height="150dp"
-            android:layout_weight="2"
-
-            android:background="#FA2525"
-
-            android:text="28℃"
-            android:textSize="50dp"
-            android:textStyle="bold"
-            android:textColor="#ffffff"
-            android:gravity="center"
-            android:layout_marginTop="70dp"
-            android:layout_marginRight="20dp"
-            android:layout_marginLeft="20dp"
-            >
-        </TextView>
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="20"
-        android:orientation="horizontal">
-
-        <ImageView
-            android:layout_width="0dp"
-            android:layout_height="200dp"
-            android:layout_marginTop="30dp"
-            android:layout_weight="1"
-            android:src ="@drawable/humidity"/>
-        <TextView
-            android:id="@+id/txtHumidity"
-            android:layout_width="0dp"
-            android:layout_height="150dp"
-            android:layout_weight="2"
-            android:background="#3043F1"
-            android:text="70%"
-            android:textSize="50dp"
-            android:textStyle="bold"
-            android:textColor="#ffffff"
-            android:gravity="center"
-            android:layout_marginTop="50dp"
-            android:layout_marginRight="20dp"
-            android:layout_marginLeft="20dp">
-
-        </TextView>
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="5">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="9"
+            android:text="Pump Activity"
+            android:textSize="30dp"
+            android:gravity="center"
+            android:textStyle="bold"
+            android:textColor="#081F9E">
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height=""
+        android:layout_weight="5">
+
+        <com.github.angads25.toggle.widget.LabeledSwitch
+            android:id="@+id/btn1"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="30dp"
+            android:layout_marginBottom="10dp"
+            android:layout_weight="20"
+            android:textSize="30dp"
+            app:colorBorder="@color/colorAccent"
+            app:on="false" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height=""
+        android:layout_weight="5"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/txtNotification"
+            android:layout_width=""
+            android:layout_height="match_parent"
+            android:layout_weight="10"
+            android:text="Notification"
+            android:textSize="36dp"
+            android:gravity="center"
+            android:textStyle="bold"
+            android:textColor="#081F9E"
+            >
+
+        </TextView>
+
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="2">
 
 
         <ImageButton
